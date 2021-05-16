@@ -1,5 +1,5 @@
 {
-  "name": "gverse",
+  "name": "@edgji/gverse",
   "version": "1.2.3",
   "description": "Object Graph Mapper for Dgraph",
   "main": "dist/gverse/index.js",
@@ -15,8 +15,11 @@
     "database",
     "graphql"
   ],
-  "repository": "gverse/gverse",
+  "repository": "edgji/gverse",
   "license": "MIT",
+  "publishConfig": { 
+    "registry":"https://npm.pkg.github.com"
+  },
   "scripts": {
     "build": "npx tsc",
     "test": "npx jest",
