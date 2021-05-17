@@ -10,7 +10,7 @@ export interface Environment {
   host: string
   port?: number
   apiKey?: string
-  debug: boolean
+  debug?: boolean
 }
 
 /* Catch any unhandled promises and report in logs */
@@ -35,7 +35,9 @@ export class Connection {
       )
     }
     this.client = new dgraph.DgraphClient(this.stub)
-    this.client.setDebugMode(environment.debug)
+    if (environment.debug) {
+      this.client.setDebugMode(environment.debug)
+    }
   }
 
   /** Verifies the connection. There's no connect operation per-se. */
