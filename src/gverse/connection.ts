@@ -8,8 +8,9 @@ import { shouldRetry, waitPromise } from "./retry"
 /** Connection environment */
 export interface Environment {
   host: string
-  port: number
-  debug: boolean
+  port?: number
+  apiKey?: string
+  debug?: boolean
 }
 
 /* Catch any unhandled promises and report in logs */
@@ -25,12 +26,18 @@ export class Connection {
   public verified: boolean = false
 
   constructor(private environment: Environment) {
-    this.stub = new dgraph.DgraphClientStub(
-      `${environment.host}:${environment.port}`,
-      grpc.credentials.createInsecure()
-    )
+    if (environment.apiKey) {
+      this.stub = dgraph.clientStubFromSlashGraphQLEndpoint(environment.host, environment.apiKey)
+    } else {
+      this.stub = new dgraph.DgraphClientStub(
+        `${environment.host}:${environment.port}`,
+        grpc.credentials.createInsecure()
+      )
+    }
     this.client = new dgraph.DgraphClient(this.stub)
-    this.client.setDebugMode(environment.debug)
+    if (environment.debug) {
+      this.client.setDebugMode(environment.debug)
+    }
   }
 
   /** Verifies the connection. There's no connect operation per-se. */
