@@ -417,9 +417,9 @@
   integrity sha512-+YB9FtyxXGyD54p8rXwWaN1EWEyar5L58GlGWgtH2I9rGmLGBQcw63+0jw+ujqVavNuO47S1ByAjm9zdHMnskw==
 
 "@types/node@>=12.12.47":
-  version "15.3.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-15.3.0.tgz#d6fed7d6bc6854306da3dea1af9f874b00783e26"
-  integrity sha512-8/bnjSZD86ZfpBsDlCIkNXIvm+h6wi9g7IqL+kmFkQ+Wvu3JrasgLElfiPgoo8V8vVfnEi0QVS12gbl94h9YsQ==
+  version "15.6.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-15.6.0.tgz#f0ddca5a61e52627c9dcb771a6039d44694597bc"
+  integrity sha512-gCYSfQpy+LYhOFTKAeE8BkyGqaxmlFxe+n4DKM6DR0wzw/HISUE/hAmkC/KT8Sw5PCJblqg062b3z9gucv3k0A==
 
 "@types/node@~12.7.5":
   version "12.7.5"
@@ -1084,10 +1084,10 @@ detect-newline@^2.1.0:
   resolved "https://registry.yarnpkg.com/detect-newline/-/detect-newline-2.1.0.tgz#f41f1c10be4b00e87b5f13da680759f2c5bfd3e2"
   integrity sha1-9B8cEL5LAOh7XxPaaAdZ8sW/0+I=
 
-dgraph-js@21.3.0:
-  version "21.3.0"
-  resolved "https://registry.yarnpkg.com/dgraph-js/-/dgraph-js-21.3.0.tgz#b481d7de380177c1a1c466946b87f1043bfb9368"
-  integrity sha512-C1+QOJfqZLCP39QA+QTnRqU5w91xgY6ErisYhE4GEUlMfQSj52Nh83/75dpD1o/hEcvQp+HS3CogT/tzcUsAhQ==
+dgraph-js@^21.3.0:
+  version "21.3.1"
+  resolved "https://registry.yarnpkg.com/dgraph-js/-/dgraph-js-21.3.1.tgz#9e4099f0efb460d9bca40c93aaf906e3f6cfeb24"
+  integrity sha512-GyOOlhMXwKIVG3s9BD8Gz5UU5LCZJt2T8cEDKv3bo9wPWU+kjFHf5gXQZSPEAbaIiMG9UGk9VZkIIjY89a5uuA==
   dependencies:
     "@grpc/grpc-js" "^1.2.5"
     "@types/url-parse" "^1.4.3"
