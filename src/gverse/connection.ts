@@ -9,7 +9,7 @@ import { shouldRetry, waitPromise } from "./retry"
 export interface Environment {
   host: string
   port?: number
-  apiKey?: string
+  cloudApiKey?: string
   debug?: boolean
 }
 
@@ -26,8 +26,8 @@ export class Connection {
   public verified: boolean = false
 
   constructor(private environment: Environment) {
-    if (environment.apiKey) {
-      this.stub = dgraph.clientStubFromCloudEndpoint(environment.host, environment.apiKey)
+    if (environment.cloudApiKey) {
+      this.stub = dgraph.clientStubFromCloudEndpoint(environment.host, environment.cloudApiKey)
     } else {
       this.stub = new dgraph.DgraphClientStub(
         `${environment.host}:${environment.port}`,
