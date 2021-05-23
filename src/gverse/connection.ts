@@ -27,7 +27,7 @@ export class Connection {
 
   constructor(private environment: Environment) {
     if (environment.apiKey) {
-      this.stub = dgraph.clientStubFromSlashGraphQLEndpoint(environment.host, environment.apiKey)
+      this.stub = dgraph.clientStubFromCloudEndpoint(environment.host, environment.apiKey)
     } else {
       this.stub = new dgraph.DgraphClientStub(
         `${environment.host}:${environment.port}`,
